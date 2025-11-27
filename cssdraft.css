@@ -10,13 +10,10 @@ body {
   display: flex;
 }
 
-
-
 .main-container {
   width: 100%;
   display: flex;
 }
-
 
 .sidebar {
   width: 295px;
@@ -32,16 +29,12 @@ body {
   color: #000;
 }
 
-
-
 .content {
-  margin-left: 56px; 
+  margin-left: 56px;
   width: 1100px;
   display: flex;
   flex-direction: column;
 }
-
-
 
 .events {
   width: 100%;
@@ -74,8 +67,6 @@ body {
   margin-top: 8px;
 }
 
-
-
 .intro {
   width: 930px;
   padding-top: 48px;
@@ -103,8 +94,6 @@ body {
   height: auto;
   object-fit: cover;
 }
-
-
 
 .gallery-row {
   width: 100%;
@@ -138,8 +127,6 @@ body {
   line-height: 22px;
 }
 
-
-
 .about {
   padding-top: 60px;
   border-top: 1px solid #CA6C49;
@@ -164,8 +151,6 @@ body {
   font-size: 15px;
   line-height: 21px;
 }
-
-
 
 .newsletter {
   padding-top: 60px;
@@ -217,8 +202,6 @@ body {
   font-weight: 600;
 }
 
-
-
 footer {
   width: 100%;
   padding-top: 60px;
@@ -233,3 +216,99 @@ footer {
 footer strong {
   font-weight: 600;
 }
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  .main-container {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 16px 0;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .sidebar p {
+    font-size: 14px;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .events {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+  .intro {
+    width: 100%;
+    padding-bottom: 50px;
+  }
+
+  .intro h1 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .intro p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .intro img {
+    width: 100%;
+  }
+
+  .gallery-row {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .photo {
+    width: 100%;
+  }
+
+  .photo-title {
+    font-size: 16px;
+  }
+
+  .about {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about img {
+    width: 90%;
+    height: auto;
+  }
+
+  .newsletter-box {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .newsletter-box input {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+}
+
