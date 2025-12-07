@@ -1,4 +1,4 @@
- {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,6 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 main {
@@ -19,10 +20,13 @@ main {
 .main-container {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .sidebar {
-  width: 295px;
+  flex: 0 0 295px;
   padding: 20px 0 0 20px;
   display: flex;
   flex-direction: column;
@@ -36,49 +40,18 @@ main {
 }
 
 .content {
+  flex: 1 1 600px;
+  max-width: 100%;
   margin-left: 56px;
-  width: 1100px;
   display: flex;
   flex-direction: column;
-}
-
-
-.events {
-  width: 100%;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  display: flex;
   gap: 40px;
 }
 
-.event {
-  display: flex;
-  flex-direction: column;
-}
-
-.event-title {
-  font-family: "Rethink Sans";
-  font-size: 15px;
-}
-
-.event p {
-  font-family: "Rethink Sans";
-  font-size: 15px;
-  line-height: 18px;
-}
-
-.event em {
-  font-size: 16px;
-  font-family: "Spectral";
-  font-style: italic;
-  margin-top: 8px;
-}
-
-
 .intro {
-  width: 930px;
-  padding-top: 48px;
-  padding-bottom: 90px;
+  width: 100%;
+  max-width: 930px;
+  padding: 48px 20px 90px;
   border-top: 1px solid #CA6C49;
 }
 
@@ -98,20 +71,23 @@ main {
 
 .intro img {
   margin-top: 32px;
-  width: 860px;
+  width: 100%;
+  max-width: 860px;
   height: auto;
   object-fit: cover;
 }
 
 .gallery-row {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
   padding-top: 60px;
   border-top: 1px solid #CA6C49;
-  display: flex;
-  gap: 24px;
 }
 
 .photo {
+  flex: 1 1 250px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -123,120 +99,59 @@ main {
   object-fit: cover;
 }
 
-.photo-title {
-  font-family: "Ethos Demo", serif;
-  font-size: 18px;
-  font-style: italic;
-}
-
-.photo-desc {
-  font-family: "Rethink Sans";
-  font-size: 17px;
-  line-height: 22px;
-}
-
 .about {
-  padding-top: 60px;
-  border-top: 1px solid #CA6C49;
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   gap: 40px;
   align-items: flex-start;
+  padding-top: 60px;
+  border-top: 1px solid #CA6C49;
 }
 
 .about img {
-  width: 408px;
-  height: 612px;
+  width: 100%;
+  max-width: 408px;
+  height: auto;
   object-fit: cover;
 }
 
-.about h2 {
-  font-size: 30px;
-  font-family: "Rethink Sans";
-  margin-bottom: 20px;
-}
-
-.about p {
-  font-size: 15px;
-  line-height: 21px;
-}
-
-.newsletter {
-  padding-top: 60px;
-  border-top: 1px solid #CA6C49;
-}
-
-.newsletter h3 {
-  font-size: 24px;
-  font-family: "Rethink Sans";
-  font-weight: 500;
-  margin-bottom: 24px;
-}
-
 .newsletter-box {
-  width: 844px;
-  height: 45px;
+  width: 100%;
+  max-width: 844px;
+  height: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   background: black;
   border-radius: 16px;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.newsletter-box label {
-  color: white;
-  font-family: "Inter";
-  font-size: 20px;
-  font-weight: 600;
 }
 
 .newsletter-box input {
-  background: transparent;
-  border: none;
-  color: white;
-  font-family: "Inter";
+  width: 100%;
   font-size: 16px;
-  width: 300px;
-}
-
-.newsletter-box button {
-  background: white;
-  color: black;
-  border: none;
-  padding: 6px 14px;
-  border-radius: 8px;
-  font-family: "Inter";
-  font-size: 16px;
-  font-weight: 600;
 }
 
 footer {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
   padding-top: 60px;
   border-top: 1px solid #CA6C49;
-  display: flex;
-  gap: 150px;
   font-family: "Rethink Sans";
   font-size: 12px;
   line-height: 18px;
-  align-self: flex-start; /* important */
-}
-
-
-
-footer strong {
-  font-weight: 600;
+  justify-content: center;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
-
-  body {
-    flex-direction: column;
-  }
-
   .main-container {
     flex-direction: column;
     padding: 0 16px;
+    margin-left: 0;
   }
 
   .sidebar {
@@ -247,27 +162,9 @@ footer strong {
     gap: 30px;
   }
 
-  .sidebar p {
-    font-size: 14px;
-  }
-
-
   .content {
     margin-left: 0;
     width: 100%;
-  }
-
- 
-  .events {
-    flex-wrap: wrap;
-    gap: 20px;
-    padding-top: 20px;
-  }
-
-
-  .intro {
-    width: 100%;
-    padding-bottom: 50px;
   }
 
   .intro h1 {
@@ -280,11 +177,6 @@ footer strong {
     line-height: 28px;
   }
 
-  .intro img {
-    width: 100%;
-  }
-
-
   .gallery-row {
     flex-direction: column;
     gap: 32px;
@@ -294,11 +186,6 @@ footer strong {
     width: 100%;
   }
 
-  .photo-title {
-    font-size: 16px;
-  }
-
-
   .about {
     flex-direction: column;
     align-items: center;
@@ -307,21 +194,14 @@ footer strong {
 
   .about img {
     width: 90%;
-    height: auto;
+    max-width: none;
   }
-
 
   .newsletter-box {
     width: 100%;
-    height: auto;
     padding: 12px;
     flex-direction: column;
     gap: 12px;
-  }
-
-  .newsletter-box input {
-    width: 100%;
-    font-size: 16px;
   }
 
   footer {
@@ -330,3 +210,4 @@ footer strong {
     text-align: center;
   }
 }
+
