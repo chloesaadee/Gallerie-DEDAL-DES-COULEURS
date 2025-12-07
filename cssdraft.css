@@ -8,6 +8,12 @@ body {
   background: white;
   font-family: "Rethink Sans", sans-serif;
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 .main-container {
@@ -213,7 +219,10 @@ footer {
   font-family: "Rethink Sans";
   font-size: 12px;
   line-height: 18px;
+  align-self: flex-start; /* important */
 }
+
+
 
 footer strong {
   font-weight: 600;
