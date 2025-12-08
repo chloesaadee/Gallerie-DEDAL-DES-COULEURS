@@ -19,14 +19,16 @@ main {
 
 .main-container {
   display: flex;
-  width: 100%;
-  max-width: 100vw;
+  flex-wrap: nowrap;
+  align-items: flex-start;
   gap: 40px;
+  width: 100%;
+  overflow-x: hidden;
   padding: 20px;
 }
 
 .sidebar {
-  flex: 0 0 200px; 
+  flex: 0 0 200px;
   position: sticky;
   top: 20px;
   display: flex;
@@ -35,89 +37,84 @@ main {
 }
 
 .sidebar-item {
-  font-size: 16px;
   font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
 }
 
 .content {
-  flex: 1;
-  max-width: calc(100% - 200px);
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   gap: 60px;
+  min-width: 0;
 }
 
 .events {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 24px;
 }
 
 .event {
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
+  flex-direction: column;
+  gap: 8px;
+  flex: 0 0 250px;
 }
 
 .event-date {
-  flex: 0 0 80px; 
   font-weight: 700;
-  font-size: 16px;
   color: #CA6C49;
 }
 
 .event-info {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .event-title {
-  font-size: 18px;
   font-weight: 600;
-  margin-bottom: 4px;
+  font-size: 18px;
 }
 
-.event-desc {
+.event-info p {
   font-size: 15px;
   line-height: 1.4;
 }
 
 .intro {
   width: 100%;
-  max-width: 930px;
-  padding: 48px 20px 90px;
+  max-width: 100%;
+  padding: 48px 0 90px;
   border-top: 1px solid #CA6C49;
 }
 
 .intro h1 {
-  font-family: "Rethink Sans";
   font-size: 37px;
   line-height: 44px;
-  font-weight: 500;
 }
 
 .intro p {
-  margin-top: 16px;
   font-family: "Spectral";
   font-size: 32px;
   line-height: 40px;
+  margin-top: 16px;
 }
 
 .intro img {
-  margin-top: 32px;
   width: 100%;
-  max-width: 860px;
   height: auto;
+  margin-top: 32px;
   object-fit: cover;
 }
 
 .gallery-row {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  padding-top: 60px;
   border-top: 1px solid #CA6C49;
+  padding-top: 60px;
 }
 
 .photo {
@@ -146,7 +143,6 @@ main {
 }
 
 .about {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
@@ -164,7 +160,6 @@ main {
 
 .about h2 {
   font-size: 30px;
-  font-family: "Rethink Sans";
   margin-bottom: 20px;
 }
 
@@ -180,26 +175,22 @@ main {
 
 .newsletter h3 {
   font-size: 24px;
-  font-family: "Rethink Sans";
-  font-weight: 500;
   margin-bottom: 24px;
 }
 
 .newsletter-box {
   width: 100%;
   max-width: 844px;
-  height: auto;
-  padding: 12px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding: 12px;
   background: black;
   border-radius: 16px;
 }
 
 .newsletter-box label {
   color: white;
-  font-family: "Inter";
   font-size: 20px;
   font-weight: 600;
 }
@@ -209,7 +200,6 @@ main {
   background: transparent;
   border: none;
   color: white;
-  font-family: "Inter";
   font-size: 16px;
 }
 
@@ -219,23 +209,20 @@ main {
   border: none;
   padding: 6px 14px;
   border-radius: 8px;
-  font-family: "Inter";
   font-size: 16px;
   font-weight: 600;
 }
 
 footer {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  padding-top: 60px;
-  border-top: 1px solid #CA6C49;
-  font-family: "Rethink Sans";
-  font-size: 12px;
-  line-height: 18px;
   justify-content: center;
   text-align: center;
+  padding-top: 60px;
+  border-top: 1px solid #CA6C49;
+  font-size: 12px;
+  line-height: 18px;
 }
 
 footer strong {
@@ -250,24 +237,23 @@ footer strong {
 
   .sidebar {
     position: relative;
-    top: 0;
     flex-direction: row;
     justify-content: space-around;
-    gap: 16px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
+    top: 0;
   }
 
-  .content {
-    max-width: 100%;
+  .events {
+    flex-direction: column;
+    gap: 16px;
   }
 
   .event {
-    flex-direction: column;
+    flex: 1 1 100%;
   }
 
-  .event-date {
-    flex: 0 0 auto;
-    margin-bottom: 4px;
+  .content {
+    min-width: 0;
   }
 
   .intro h1 {
@@ -302,15 +288,12 @@ footer strong {
 
   .newsletter-box {
     width: 100%;
-    padding: 12px;
     flex-direction: column;
-    gap: 12px;
   }
 
   footer {
     flex-direction: column;
     gap: 40px;
-    text-align: center;
   }
 }
 
