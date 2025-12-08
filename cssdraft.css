@@ -28,18 +28,21 @@ main {
 }
 
 .sidebar {
-  flex: 0 0 200px;
+  flex: 0 0 auto;
   position: sticky;
   top: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 40px;
+  padding-left: 50px;
+  align-items: center;
 }
 
 .sidebar-item {
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
+  display: inline-block;
 }
 
 .content {
@@ -243,6 +246,8 @@ footer strong {
     justify-content: space-around;
     margin-bottom: 20px;
     top: 0;
+    padding-left: 0;
+    gap: 20px;
   }
 
   .events {
@@ -300,5 +305,6 @@ footer strong {
     gap: 40px;
   }
 }
+
 
 
